@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'rust_firmware'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=rust_firmware",
+                    "--package=rust_firmware"
+                ],
+                "filter": {
+                    "name": "rust_firmware",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'rust_firmware'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=rust_firmware",
+                    "--package=rust_firmware"
+                ],
+                "filter": {
+                    "name": "rust_firmware",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
