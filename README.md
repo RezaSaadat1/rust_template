@@ -5,6 +5,19 @@ https://www.youtube.com/watch?v=jB7aJDAvSuo
 
 https://static.rust-lang.org/dist/2023-04-20/
 
+# Rust Extensions
+1. Rust Analyzer
+2. Code Runner
+3. crates
+4. https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
+
+After Creating project and opening workspace you should press Ctrl+Shift+P to create proper configuration for the project
+
+
+ps fax | grep firmware.bin | awk '{print $1}' | head -1
+
+
+ cargo build /home/behnam/.vscode/extensions/vadimcn.vscode-lldb-1.10.0/adapter/codelldb terminal-agent --connect=36295 
 
 Rust ESP32
 https://www.youtube.com/watch?v=0PPPdqoDBQs
@@ -38,8 +51,11 @@ sudo apt update
 sudo apt install libc6:amd64
 
 
-
 ```
+
+https://www.docker.com/blog/cross-compiling-rust-code-for-multiple-architectures/
+
+https://dev.to/rubberduck/debugging-rust-arm-cortexm-programs-with-visual-studio-code-336h
 
 https://www.docker.com/blog/cross-compiling-rust-code-for-multiple-architectures/
 
