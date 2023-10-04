@@ -19,6 +19,28 @@ https://cxx.rs
 
 Docs.rs/
 
+```
+# Enable multi-arch
+sudo dpkg --add-architecture amd64
+# Fix repos
+echo 'deb [arch=amd64,i386] http://us.archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+deb [arch=amd64,i386] http://us.archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb [arch=amd64,i386] http://us.archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb [arch=amd64,i386] http://security.ubuntu.com/ubuntu jammy-security main restricted universe multiverse
+
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ jammy main restricted universe multiverse
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ jammy-updates main restricted universe multiverse
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ jammy-backports main restricted universe multiverse
+deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports/ jammy-security main restricted universe multiverse' | sudo tee /etc/apt/sources.list
+
+# Install libraries
+sudo apt update
+sudo apt install libc6:amd64
+
+
+
+```
+
 https://www.docker.com/blog/cross-compiling-rust-code-for-multiple-architectures/
 
 https://doc.rust-lang.org/cargo/reference/workspaces.html
@@ -49,7 +71,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 rustup target add armv7-unknown-linux-gnueabihf
 cargo install cross
-cargo install --force cargo-make
+cargo install cargo-make
 
 rustup update
 rustup show
